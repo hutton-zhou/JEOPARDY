@@ -29,13 +29,13 @@ body{
 .right *{
     text-align: right;
     margin-right:0;
-    button{
+    &button{
         margin-left:10px;
     }
-    updown{
+    &updown{
         margin-left:0;
     }
-    :not(button, .updown){
+    &:not(button, .updown){
         margin-left:auto;
     }
 }
@@ -47,7 +47,7 @@ body{
 .question{
     color:white;
     text-align:center;
-    :not(display){
+    &:not(display){
         font-size:30px;
     }
 }
@@ -59,6 +59,7 @@ body{
 .button{
     color:white;
     background-color:cornflowerblue;
+    font-size:30px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 20px;
     padding:10px;
@@ -93,10 +94,15 @@ body{
 }
 .smallb{
     color:white;
-    background-color:royalblue;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 20px;
     cursor:pointer;
+}
+.red{
+    background-color:red;
+}
+.green{
+    background-color:green;
 }
 .bl{
     margin-right:10px;

@@ -5,7 +5,7 @@ let grid=document.querySelector(".grid");
 let bar=document.querySelector(".bar");
 let cover=document.querySelector(".cover");
 
-let currPoints;
+let currPoints=0;
 
 for(let i=200; i<=1000; i+=200){
     for(let j=0; j<6; j++){
