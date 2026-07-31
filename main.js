@@ -5,6 +5,8 @@ let grid=document.querySelector(".grid");
 let bar=document.querySelector(".bar");
 let cover=document.querySelector(".cover");
 
+let currPoints;
+
 for(let i=200; i<=1000; i+=200){
     for(let j=0; j<6; j++){
         let element=document.createElement("div");
@@ -21,6 +23,31 @@ for(let i=200; i<=1000; i+=200){
     
     }
 }
+
+function freshScore(){
+    studentDisplay.innerHTML=scoreStudents;
+    parentDisplay.innerHTML=scoreParents;
+}
+//do later
+
+//buttoning
+let buttons=document.querySelectorAll(".smallb");
+for(let i=0; i<4; i++){
+    let button=buttons[i];
+    let id=button.id;
+    //add stuff
+    let who=id.charAt(0);
+    let which=id.charAt(1);
+    button.addEventListener("click",function(){
+        if(who==1){
+            scoreStudents+=(which==1?1:-1)*currPoints;
+        }else{
+            scoreParents+=(which==1?1:-1)*currPoints;
+        }
+        freshScore();
+    })
+}
+
 //
 let topics=["Block Types","Scratch Basics","Special Numbers","Our Coaches","Real Coding","General Knowledge"];
 let problems=[
@@ -86,6 +113,8 @@ function popIn(){
     cover.inert=true;
 }
 function popOut(topicN, money){
+    //
+    currPoints=money;
     //first get location
     let mon=(money/200)-1;
     cover.style.transformOrigin=`${topicN*20}% ${(bar.offsetHeight/cover.offsetHeight+(mon*0.25)*grid.offsetHeight/cover.offsetHeight)*100}%`;
@@ -163,7 +192,8 @@ size();
 popIn();
 
 
-let scoreStudents;
-let scoreParents;
-let studentDisplay=document.querySelector("students");
-let parentDisplay=document.querySelector("parents");
+let scoreStudents=0;
+let scoreParents=0;
+let studentDisplay=document.querySelector(".students");
+let parentDisplay=document.querySelector(".parents");
+freshScore();

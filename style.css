@@ -21,13 +21,28 @@ body{
     font-size:20px;
     color:white;
     padding:10px;
+    flex:0 0 200px;
 }
 .right{
     text-align:right;
 }
+.right *{
+    text-align: right;
+    margin-right:0;
+    button{
+        margin-left:10px;
+    }
+    updown{
+        margin-left:0;
+    }
+    :not(button, .updown){
+        margin-left:auto;
+    }
+}
 .display{
     text-align:center;
     font-size:40px;
+    align-self:center;
 }
 .question{
     color:white;
@@ -66,6 +81,29 @@ body{
 }
 .big{
     font-size:30px;
+    display:inline;
+}
+.lr{
+    display:flex;
+    
+}
+.updown{
+    display:inline-flex;
+    flex-direction: column;
+}
+.smallb{
+    color:white;
+    background-color:royalblue;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    cursor:pointer;
+}
+.bl{
+    margin-right:10px;
+}
+.br{
+    margin-left:10px;
+    margin-right:0;
 }
 
 .bar{
