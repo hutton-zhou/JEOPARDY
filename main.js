@@ -55,7 +55,7 @@ let problems=[
         ["What color are the motion blocks?","Blue"],
         ["What color are variables?","Orange"],
         ["What category of blocks are clone blocks in?","Control blocks"],
-        ["Which block (operator) adds two strings together?","The \"join\" block"],
+        ["Which block (operator) adds two words together?","The \"join\" block"],
         ["The two types of data blocks are value blocks and _______s", "Booleans"]
     ],
     [
