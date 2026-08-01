@@ -25,8 +25,8 @@ for(let i=200; i<=1000; i+=200){
 }
 
 function freshScore(){
-    let upColor="lightgreen";
-    let downColor="lightsalmon";
+    let upColor="limegreen";
+    let downColor="salmon";
     if(displayStudents<scoreStudents){
         displayStudents+=10;
         studentDisplay.style.color=upColor;
@@ -157,11 +157,11 @@ function popOut(topicN, money){
     let button=document.createElement("div");
     let reveal=document.createElement("button");
     button.classList.add("question","inner");
-    button.clicked=false;
+    reveal.clicked=false;
     reveal.innerHTML="Reveal Answer:"
     reveal.classList.add("button");
 
-    button.addEventListener("click",function(){
+    reveal.addEventListener("click",function(){
         //first create
         if(this.clicked)return;
         cover.appendChild(document.createElement("hr"));
