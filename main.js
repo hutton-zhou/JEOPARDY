@@ -6,9 +6,14 @@ HTMLAudioElement.prototype.prepPlay=function(){
 let audioMan={
     
     whoosh:document.getElementById("whoosh"),
+    whoosh2:document.getElementById("whoosh2"),
+
     magic:document.getElementById("magic"),
-    bonk:document.getElementById("bonk")
+    bonk:document.getElementById("bonk"),
+
+    bell:document.getElementById("bell")
 }
+
 
 
 
@@ -156,6 +161,8 @@ function popOut(topicN, money){
     //play the sound
     audioMan.whoosh.prepPlay();
 
+    
+
     currPoints=money;
     //first get location
     let mon=(money/200)-1;
@@ -185,6 +192,11 @@ function popOut(topicN, money){
     reveal.addEventListener("click",function(){
         //first create
         if(this.clicked)return;
+
+        //sounds
+        audioMan.bell.prepPlay();
+
+
         cover.appendChild(document.createElement("hr"));
         let answer=document.createElement("p");
         answer.classList.add("question","answer");
@@ -211,7 +223,8 @@ function popOut(topicN, money){
             me.style.cursor="default";
             me.clicked=true;
             me.classList.remove("anim");
-        
+            
+            audioMan.whoosh2.prepPlay();
             popIn();
             cover.innerHTML="";
         
