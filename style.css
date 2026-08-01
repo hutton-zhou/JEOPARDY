@@ -171,3 +171,6 @@ body{
 .item.anim:active{
     transform:scale(0.95);
 }
+.assets{
+    display:none;
+}

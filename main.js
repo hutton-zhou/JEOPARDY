@@ -1,5 +1,16 @@
-
+HTMLAudioElement.prototype.prepPlay=function(){
+    this.currentTime=0;
+    this.play();
+}
 //start
+let audioMan={
+    
+    whoosh:document.getElementById("whoosh"),
+    magic:document.getElementById("magic"),
+    bonk:document.getElementById("bonk")
+}
+
+
 
 let grid=document.querySelector(".grid");
 let bar=document.querySelector(".bar");
@@ -59,7 +70,15 @@ for(let i=0; i<4; i++){
     //add stuff
     let who=id.charAt(0);
     let which=id.charAt(1);
+    
     button.addEventListener("click",function(){
+        if(which==1){
+            var temp=audioMan.magic;
+        }else{
+            var temp=audioMan.bonk;
+        }
+        setTimeout(function(){temp.prepPlay()});
+
         if(who==1){
             scoreStudents+=(which==1?1:-1)*currPoints;
         }else{
@@ -134,7 +153,9 @@ function popIn(){
     cover.inert=true;
 }
 function popOut(topicN, money){
-    //
+    //play the sound
+    audioMan.whoosh.prepPlay();
+
     currPoints=money;
     //first get location
     let mon=(money/200)-1;
