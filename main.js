@@ -11,7 +11,7 @@ for(let i=200; i<=1000; i+=200){
     for(let j=0; j<6; j++){
         let element=document.createElement("div");
         element.innerHTML=i;
-        element.classList.add("item");
+        element.classList.add("item","anim");
         
         element.clicked=false;
         element.addEventListener("click",function(){
@@ -189,6 +189,7 @@ function popOut(topicN, money){
             me.style.borderColor="darkslategrey";
             me.style.cursor="default";
             me.clicked=true;
+            me.classList.remove("anim");
         
             popIn();
             cover.innerHTML="";
