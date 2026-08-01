@@ -25,8 +25,29 @@ for(let i=200; i<=1000; i+=200){
 }
 
 function freshScore(){
-    studentDisplay.innerHTML=scoreStudents;
-    parentDisplay.innerHTML=scoreParents;
+    let upColor="lightgreen";
+    let downColor="lightsalmon";
+    if(displayStudents<scoreStudents){
+        displayStudents+=10;
+        studentDisplay.style.color=upColor;
+    }else if(displayStudents>scoreStudents){
+        displayStudents-=10;
+        studentDisplay.style.color=downColor;
+    }else{
+        studentDisplay.style.color="white";
+    }
+
+    if(displayParents<scoreParents){
+        displayParents+=10;
+        parentDisplay.style.color=upColor;
+    }else if(displayParents>scoreParents){
+        displayParents-=10;
+        parentDisplay.style.color=downColor;
+    }else{
+        parentDisplay.style.color="white";
+    }
+    studentDisplay.innerHTML=displayStudents;
+    parentDisplay.innerHTML=displayParents;
 }
 //do later
 
@@ -194,6 +215,8 @@ popIn();
 
 let scoreStudents=0;
 let scoreParents=0;
+let displayStudents=0;
+let displayParents=0;
 let studentDisplay=document.querySelector(".students");
 let parentDisplay=document.querySelector(".parents");
-freshScore();
+setInterval(freshScore,20);
