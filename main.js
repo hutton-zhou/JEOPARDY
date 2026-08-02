@@ -118,7 +118,7 @@ let problems=[
         ["How wide is the Scratch coordinate grid?","480 pixels (from -240 to 240)"]
     ],
     [
-        ["What does Allan like to do before/after class? (sometimes during as well)","Play video games"], 
+        ["Allan was gone for several classes because he went to _________ ____.","Overnight Camp"], 
         ["Which sport does Allan like most?","Hockey"],
         ["Name one coding language that Hutton currently codes in, that is not Scratch or Python.","Java, C++, Javascript (name one)"],
         ["How many pet birds does Cloris have right now?","2 birds"],
